@@ -104,6 +104,7 @@ Após instalar os requisitos:
     * Esses e outros comandos/atalhos estão disponíveis no arquivo `Makefile`
 6. Crie as migrações: `make db-init`
 7. Execute: `make db-migrate`
+	* `db-migrate` e `db-upgrade` funcionam somente após todas as configurações do Postgres
 8. Exporte para o Postgres: `make db-upgrade`
 9. Executando os testes: `make run-tests`
 
