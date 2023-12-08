@@ -1,24 +1,24 @@
 # ACMEVita
 
-API REST desenvolvida com Python 3, Flask e Postgres.
+REST API developed with Python 3, Flask and Postgres.
 
-## Estrutura
+## Structure
 
-Projeto baseado no padrão *factory*, arquitetura com *blueprints* e práticas do *Twelve Factor*.
+Project based on the *factory* standard, architecture with *blueprints* and *Twelve Factor* practices.
 
-Principais arquivos:
+Main files:
 
-* ```/app/__init__.py```: instancia as configurações e blueprints;
+* ```/app/__init__.py```: instantiates configurations and blueprints;
 
-* ```/app/config.py```: configurações da aplicação, determinada por tipo de ambiente;
+* ```/app/config.py```: application settings, determined by type of environment;
 
-* ```/app/blueprints/```: endpoints das regras negócios e outros;
+* ```/app/blueprints/```: endpoints of business rules and others;
 
-* ```/app/extensions/```: instancia e configura extensões de terceiros;
+* ```/app/extensions/```: instantiates and configures third-party extensions;
 
-* ```/app/tests/```: testes do projeto;
+* ```/app/tests/```: project testing.
 
-**Visão geral:**
+**Overview:**
 
 ```
 .
@@ -78,11 +78,11 @@ Principais arquivos:
 └── requirements.txt
 ```
 
-A aplicação deve ser executada nos ambientes de *development* ou *production*, via Docker. Para executar sem o Docker, instale o Python 3, as dependências do `requirements.txt`, o Postgres e crie os databases/credenciais de acordo com o `.env`.
+The application must be run in *development* or *production* environments, via Docker. To run without Docker, install Python 3, the `requirements.txt` dependencies, Postgres and create the databases/credentials according to `.env`.
 
-## Configurações
+## Settings
 
-Requisitos:
+Requirements:
 
 * Git - https://git-scm.com/downloads
 
@@ -90,30 +90,30 @@ Requisitos:
 
 * Docker Compose - https://docs.docker.com/compose/install/
 
-Após instalar os requisitos:
+After installing the requirements:
 
-1. Clone o repositório: `git clone https://github.com/daltroedu/acmevita.git`
-2. Acesse o diretório: `cd acmevita/`
-3. Exporte o ambiente de *develompent*: `export FLASK_ENV=development`
-4. *Build* os containers: `make build`
-    * A primeira build pode demorar
-    * A aplicação escuta na porta 5000 e o banco de dados na 5432
-5. Execute os containers: `make run`
-    * Para executar com logs/stdout: `make run-stdout`
-    * Encerrar: `make stop`
-    * Esses e outros comandos/atalhos estão disponíveis no arquivo `Makefile`
-6. Crie as migrações: `make db-init`
+1. Clone the repository: `git clone https://github.com/daltroedu/acmevita.git`
+2. Access the directory: `cd acmevita/`
+3. Export the *development* environment: `export FLASK_ENV=development`
+4. *Build* the containers: `make build`
+    * The first build may take a while
+    * The application listens on port 5000 and the database on 5432
+5. Execute the containers: `make run`
+    * To run with logs/stdout: `make run-stdout`
+    * Stop: `make stop`
+    * These and other commands/shortcuts are available in the file `Makefile`
+6. Create the migrations: `make db-init`
 7. Execute: `make db-migrate`
-	* `db-migrate` e `db-upgrade` funcionam somente após todas as configurações do Postgres
-8. Exporte para o Postgres: `make db-upgrade`
-9. Executando os testes: `make run-tests`
+	* `db-migrate` and `db-upgrade` work only after all Postgres configurations
+8. Export to Postgres: `make db-upgrade`
+9. Running the tests: `make run-tests`
 
 ## Endpoints
 
-Os endpoints estão divididos por contexto: *departaments*, *employees* e *dependents*, sendo *employees* um recurso pai de *dependents*.
+The endpoints are divided by context: *departaments*, *employees* and *dependents*, with *employees* being a parent resource of *dependents*.
 
-Caso utilize o Postman, no diretório `contrib/` tem as collections para exportação.
+If you use Postman, in the `contrib/` directory you have the collections for export.
 
-A documentação da API (Swagger) pode ser acessada em: `http://localhost:5000/v1`
+API documentation (Swagger) can be accessed at: `http://localhost:5000/v1`
 
 ![swagger](docs/imgs/swagger.png)
