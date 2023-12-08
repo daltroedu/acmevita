@@ -1,6 +1,6 @@
 # ACMEVita
 
-REST API developed with Python 3, Flask and Postgres.
+REST API developed with Python 3, Flask and Postgres. Application that exemplifies management system for a small company, with departments, employees and their dependents, conceptually coded in this way.
 
 ## Structure
 
