@@ -78,7 +78,7 @@ Main files:
 └── requirements.txt
 ```
 
-The application must be run in *development* or *production* environments, via Docker. To run without Docker, install Python 3, the `requirements.txt` dependencies, Postgres and create the databases/credentials according to `.env`.
+The application must be run in *development* or *production* environments, via Docker. To run without Docker, install Python 3, the `requirements.txt` dependencies, Postgres and create the databases/credentials according to `.env` (.env file just for example).
 
 ## Settings
 
